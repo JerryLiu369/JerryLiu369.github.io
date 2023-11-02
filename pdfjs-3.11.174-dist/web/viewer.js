@@ -534,9 +534,7 @@ const PDFViewerApplication = {
     } = this;
 
     //edit by ljw
-    appConfig.toolbar.print.hidden = true;
-    appConfig.toolbar.download.hidden = true;
-    appConfig.toolbar.viewBookmark.hidden = true;
+    appConfig.sidebar.classList.add("hidden");
     //end edit
 
     let file;
