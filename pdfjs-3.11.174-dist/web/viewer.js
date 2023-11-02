@@ -220,6 +220,11 @@ const PDFViewerApplication = {
   _isCtrlKeyDown: false,
   _nimbusDataPromise: null,
   async initialize(appConfig) {
+
+    //edit by ljw
+    appConfig.sidebar.openFile.hidden=true;
+    //end edit
+
     this.preferences = this.externalServices.createPreferences();
     this.appConfig = appConfig;
     await this._initializeOptions();
@@ -229,11 +234,6 @@ const PDFViewerApplication = {
       _app_options.AppOptions.set("externalLinkTarget", _pdf_link_service.LinkTarget.TOP);
     }
     await this._initializeViewerComponents();
-
-    //edit by ljw
-    appConfig.sidebar.classList.add("hidden");
-    //end edit
-
     this.bindEvents();
     this.bindWindowEvents();
     const appContainer = appConfig.appContainer || document.documentElement;
