@@ -220,6 +220,11 @@ const PDFViewerApplication = {
   _isCtrlKeyDown: false,
   _nimbusDataPromise: null,
   async initialize(appConfig) {
+
+    //edit by ljw
+    appConfig.sidebar.classList.add("hidden");
+    //end edit
+
     this.preferences = this.externalServices.createPreferences();
     this.appConfig = appConfig;
     await this._initializeOptions();
@@ -532,11 +537,6 @@ const PDFViewerApplication = {
       appConfig,
       eventBus
     } = this;
-
-    //edit by ljw
-    appConfig.sidebar.classList.add("hidden");
-    //end edit
-
     let file;
     const queryString = document.location.search.substring(1);
     const params = (0, _ui_utils.parseQueryString)(queryString);
