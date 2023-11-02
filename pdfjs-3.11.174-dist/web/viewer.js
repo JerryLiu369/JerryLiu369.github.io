@@ -220,11 +220,6 @@ const PDFViewerApplication = {
   _isCtrlKeyDown: false,
   _nimbusDataPromise: null,
   async initialize(appConfig) {
-
-    //edit by ljw
-    appConfig.sidebar.openFile.hidden=true;
-    //end edit
-
     this.preferences = this.externalServices.createPreferences();
     this.appConfig = appConfig;
     await this._initializeOptions();
