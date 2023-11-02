@@ -528,6 +528,10 @@ const PDFViewerApplication = {
   },
   async run(config) {
     await this.initialize(config);
+    const {
+      appConfig,
+      eventBus
+    } = this;
 
     //edit by ljw
     appConfig.toolbar.openFile.hidden = true;
@@ -540,10 +544,6 @@ const PDFViewerApplication = {
     appConfig.secondaryToolbar.viewBookmarkButton.hidden = true;
     //end edit
 
-    const {
-      appConfig,
-      eventBus
-    } = this;
     let file;
     const queryString = document.location.search.substring(1);
     const params = (0, _ui_utils.parseQueryString)(queryString);
